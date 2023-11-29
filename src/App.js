@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import HelloWorldComponent from './HelloWorldComponent';
-
+import MyClassComponent from './MyClassComponent';
 function App() {
   const hello = "Hello World"
   const number = 1
@@ -21,6 +21,7 @@ function App() {
           Learn React
         </a>
         {number ===1?<HelloWorldComponent/>: "There i no component found"}
+        <MyClassComponent/>
       </header>
     </div>
   );
