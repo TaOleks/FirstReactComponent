@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import HelloWorldComponent from './HelloWorldComponent';
 
 function App() {
+  const hello = "Hello World"
+  const number = 1
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          { hello}
         </p>
         <a
           className="App-link"
@@ -17,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        {number ===1?<HelloWorldComponent/>: "There i no component found"}
       </header>
     </div>
   );
