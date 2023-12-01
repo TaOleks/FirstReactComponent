@@ -1,20 +1,34 @@
 
 import './App.css';
-import HelloWorldComponent from './HelloWorldComponent';
-import MyClassComponent from './MyClassComponent';
+import {useState} from 'react';
+
 function App() {
-  const hello = "Hello World"
-  const component = 'functional'
-  return (
+  const [input, setInput] = useState(['']) ;
+  const [item, setItem] = useState(['First Element']) ;
+
+  const onClickHandler = ()=>{
+    
+    const updatedElement = [...item, input]
+    setItem(updatedElement);
+    setInput('')
+  }
+  const OnChangeHandler= (e) => {
+    const value = e.target.value;
+    setInput(value)
+  }
+
+  return ( 
     <div className="App">
       <header className="App-header">
-        
-        <p>
-          { hello}
-        </p>
-        
-        {component ==='functional'?<HelloWorldComponent/>:<MyClassComponent/> }
-        
+        <input onChange={OnChangeHandler} value = {input}/>
+       <ul>
+          {item.map((element, index) =>(
+           <li>
+           { element} {index}
+          </li>))}
+       </ul>
+       <button onClick={onClickHandler}>Add new element</button>
+
       </header>
     </div>
   );
