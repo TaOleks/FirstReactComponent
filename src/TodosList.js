@@ -1,10 +1,13 @@
 import React from 'react'
+import GrandChildComponent from './GrandChildComponent'
 
 const  TodosList = (props) =>{
-    console.log(props)
+    
     return (
-        
-         <div>{props.name}</div>
+        <>
+         <GrandChildComponent propsFromTodoList = {props.id} />
+        <p>{props.name}</p> 
+    </>
     )
 }
 
