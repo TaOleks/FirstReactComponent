@@ -1,30 +1,35 @@
 import React from 'react'
+import TodosList from './TodosList';
 
-const RenderComponent = ()=>{
-    const firstRenderValue = false;
-    const secondRenderValue = '';
+const RenderComponent = () => {
+  
 
+    const toDos = [{
+            id: 1,
+            name: 'firstTodo'
+        },
+        {
+            id: 2,
+            name: 'secondTodo'
+        },
+        {
+            id: 3,
+            name: 'thirdTodo'
+        },
+        {
+            id: 4,
+            name: 'fourthTodo'
+        },
+    ]
+    return <div>
+        {
+            toDos.map((item) =>{
+                
+                return <TodosList key={item.id} name={item.name} id={item.id}/>
+            })
+        }
+         </div>
 
-    // return <>
-    // {firstRenderValue && <p>I'm firstRenderValue</p>}
-    // {secondRenderValue && <p>I'm secondRenderValue</p>}
-    // </>
-    // The same with ternarny operator
-//     return (
-//     <>
-//      {firstRenderValue ? <p>"I'm first"</p> : <p>"I'm second"</p>}
-//      </>
-//    )
-//  the same operator if
-
-       if (firstRenderValue) {
-        return <p>First</p> 
 }
-       if (secondRenderValue) {
-        return <p>Second</p>
-    
-       }
-       return <p>third</p>
-    }
 
 export default RenderComponent
