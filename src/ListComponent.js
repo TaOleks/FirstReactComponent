@@ -12,7 +12,7 @@ const ListComponent = ()=>{
       setItem(updatedElement);
       setInput('')
     }
-    const OnChangeHandler= (e) => {
+    const onChangeHandler= (e) => {
       const value = e.target.value;
       setInput(value)
     }
@@ -22,7 +22,7 @@ const ListComponent = ()=>{
         //React.fragment
 
         <>
-        <input onChange={OnChangeHandler} value = {input}/>
+        <input onChange={onChangeHandler} value = {input}/>
         <ul>
            {item.map((element, index) =>(
             <li>
